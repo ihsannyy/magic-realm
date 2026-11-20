@@ -391,7 +391,7 @@ Tiap spell wajib punya: cost, cooldown, particle, sound, actionbar feedback.
 ### Subphase Status — F1 (MVP)
 
 - [x] F1.1 — Wand Item (BP item + recipe + RP texture + lang minimal)
-- [ ] F1.2 — Mana System
+- [x] F1.2 — Mana System
 - [ ] F1.3 — Fireball Spell
 - [ ] F1.4 — Portal Block
 - [ ] F1.5 — Arena Build (mcfunction)
