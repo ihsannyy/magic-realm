@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Magic Realm [RP]",
+    "description": "Texture, localization, dan sound untuk Magic Realm.",
+    "uuid": "c590062c-03e3-43f3-a122-e3d3b781f1c4",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 60]
+  },
+  "modules": [
+    {
+      "description": "Resource pack Magic Realm.",
+      "type": "resources",
+      "uuid": "43fe13d6-010e-48fb-a536-ac0612193cb0",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c51593cb-d49b-4ea0-a6c6-f01e5de9a239",
+      "version": [1, 0, 0]
+    }
+  ]
+}

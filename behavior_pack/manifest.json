@@ -1,0 +1,32 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Magic Realm [BP]",
+    "description": "Magic Realm — sistem mana, spell, portal, dan boss untuk Minecraft Bedrock.",
+    "uuid": "c51593cb-d49b-4ea0-a6c6-f01e5de9a239",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 60]
+  },
+  "modules": [
+    {
+      "description": "Definisi item, block, entity, dan function Magic Realm.",
+      "type": "data",
+      "uuid": "e71c95ab-a8ad-4e9e-97e4-c4249b1ceff5",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script runtime Magic Realm.",
+      "type": "script",
+      "language": "Javascript",
+      "uuid": "bd184633-08c6-48fc-897d-74790dbdffd3",
+      "entry": "scripts/main.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    }
+  ]
+}

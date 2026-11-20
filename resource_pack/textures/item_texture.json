@@ -1,0 +1,14 @@
+{
+  "resource_pack_name": "Magic Realm",
+  "texture_name": "atlas.items",
+  "padding": 2,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "magicrealm:wand": {
+      "textures": "textures/items/wand"
+    },
+    "wand": {
+      "textures": "textures/items/wand"
+    }
+  }
+}
