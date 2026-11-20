@@ -16,6 +16,6 @@ effect @s regeneration 5 1 true
 effect @s resistance 5 1 true
 
 # Pesan
-tellraw @s {"rawtext":[{"text":"§d✨ §fSelamat datang di §dMagic Realm§f, §e"}]}
+tellraw @s {"rawtext":[{"text":"§d✨ §fSelamat datang di §dMagic Realm§f!"}]}
 tellraw @s {"rawtext":[{"text":"§7Kamu sudah mendapat Wand. Klik kanan untuk cast fireball!"}]}
 tellraw @s {"rawtext":[{"text":"§7Ketik §e/function reset_arena §7untuk reset arena"}]}

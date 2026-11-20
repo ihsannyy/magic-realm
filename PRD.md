@@ -394,7 +394,7 @@ Tiap spell wajib punya: cost, cooldown, particle, sound, actionbar feedback.
 - [x] F1.2 — Mana System
 - [x] F1.3 — Fireball Spell
 - [x] F1.4 — Portal Block
-- [ ] F1.5 — Arena Build (mcfunction)
+- [x] F1.5 — Arena Build (mcfunction)
 - [ ] F1.6 — Auto-setup on Join
 
 **Total: 5 minggu.** Kalau ada minggu yang slip, **jangan extend fase** — cut feature. F1 harus selesai minggu 1.
