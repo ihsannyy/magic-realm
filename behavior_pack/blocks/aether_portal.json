@@ -2,30 +2,16 @@
   "format_version": "1.20.0",
   "minecraft:block": {
     "description": {
-      "identifier": "magicrealm:aether_portal",
-      "menu_category": {
-        "category": "construction"
-      }
+      "identifier": "magicrealm:aether_portal"
     },
     "components": {
       "minecraft:light_emission": 15,
       "minecraft:destructible_by_mining": false,
-      "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 3600000
-      },
       "minecraft:material_instances": {
         "*": {
           "texture": "aether_portal",
-          "render_method": "blend"
+          "render_method": "opaque"
         }
-      },
-      "minecraft:collision_box": {
-        "origin": [-8, 0, -8],
-        "size": [16, 16, 16]
-      },
-      "minecraft:selection_box": {
-        "origin": [-8, 0, -8],
-        "size": [16, 16, 16]
       }
     }
   }
