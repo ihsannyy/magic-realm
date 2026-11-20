@@ -20,11 +20,7 @@
       "minecraft:durability": {
         "max_durability": 1000
       },
-      "minecraft:damage": 2,
-      "minecraft:cooldown": {
-        "category": "attack",
-        "duration": 0.3
-      }
+      "minecraft:damage": 2
     }
   }
 }
