@@ -38,7 +38,6 @@ behavior_pack/   manifest, script JS, function, item, block, recipe
 resource_pack/   texture, lang, item_texture, terrain_texture
 builds/          hasil .mcaddon + README
 build.sh         script build
-PRD.md           spesifikasi dan roadmap produk
 ```
 
 ## Catatan teknis
