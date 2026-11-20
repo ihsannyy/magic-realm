@@ -15,6 +15,8 @@ sh build.sh
 
 Keduanya memakai `Cheats: ON` di world untuk `/function`, `/give`, dan `/scriptevent`.
 
+Daftar **semua command** ada di [README utama](../README.md).
+
 ## Cara pakai edisi Public
 
 1. Import `magic_realm_v1.0.mcaddon`.
