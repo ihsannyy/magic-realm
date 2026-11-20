@@ -7,7 +7,7 @@
 import { world, system } from '@minecraft/server';
 import { initManaSystem, showManaBar } from './mana.js';
 import { cast as castFireball } from './spells/fireball.js';
-import { usePortal, PORTAL_BLOCK_ID } from './portal.js';
+import { usePortal, PORTAL_BLOCK_IDS } from './portal.js';
 
 const WAND_ID = 'magicrealm:wand';
 const SPAWN_POINT = { x: 0, y: 65, z: 0 };
@@ -78,8 +78,12 @@ function registerEvents() {
     const player = event.source;
     if (!isPlayer(player)) return;
     if (!event.itemStack || event.itemStack.typeId !== WAND_ID) return;
-    if (!event.block || event.block.typeId !== PORTAL_BLOCK_ID) return;
-    usePortal(player);
+    if (event.block && PORTAL_BLOCK_IDS.includes(event.block.typeId)) {
+      usePortal(player);
+      return;
+    }
+    // Tap biasa pada blok apa pun tetap meng-cast spell aktif.
+    castFireball(player);
   });
 
   world.afterEvents.playerSpawn.subscribe((event) => {

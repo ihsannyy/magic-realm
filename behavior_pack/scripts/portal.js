@@ -9,6 +9,9 @@ import { tell } from './utils/ui.js';
 import { isOnCooldown, markCooldown } from './utils/cooldown.js';
 
 export const PORTAL_BLOCK_ID = 'magicrealm:aether_portal';
+// Fallback: blok vanilla yang pasti dikenal /setblock di semua versi.
+export const VANILLA_PORTAL_BLOCK_ID = 'minecraft:lodestone';
+export const PORTAL_BLOCK_IDS = [PORTAL_BLOCK_ID, VANILLA_PORTAL_BLOCK_ID];
 export const AETHER_DIMENSION_ID = 'magicrealm:aether';
 
 const OVERWORLD_ID = 'minecraft:overworld';

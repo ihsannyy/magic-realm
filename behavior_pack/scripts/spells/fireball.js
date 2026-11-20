@@ -4,6 +4,7 @@
  * Purpose: Fireball spell implementation
  */
 
+import { system } from '@minecraft/server';
 import { useMana, getMana, MAX_MANA } from '../mana.js';
 import { isOnCooldown, markCooldown } from '../utils/cooldown.js';
 import { actionBar } from '../utils/ui.js';
@@ -12,6 +13,25 @@ export const id = 'fireball';
 export const name = 'Fireball';
 export const cost = 15;
 export const cooldownTicks = 60; // 3 detik
+
+/** Ledakan partikel di sekitar titik (efek visual lebih tebal). */
+function particleBurst(dimension, center, particle, count, radius) {
+  for (let i = 0; i < count; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const pitch = (Math.random() - 0.5) * Math.PI;
+    const r = radius * (0.35 + Math.random() * 0.65);
+    const point = {
+      x: center.x + Math.cos(angle) * Math.cos(pitch) * r,
+      y: center.y + Math.sin(pitch) * r,
+      z: center.z + Math.sin(angle) * Math.cos(pitch) * r,
+    };
+    try {
+      dimension.spawnParticle(particle, point);
+    } catch (e) {
+      // Partikel opsional.
+    }
+  }
+}
 
 /**
  * Cast fireball ke arah pandangan player.
@@ -44,8 +64,9 @@ export function cast(player) {
   };
 
   const dimension = player.dimension;
+  let projectile = null;
   try {
-    const projectile = dimension.spawnEntity('minecraft:fireball', origin);
+    projectile = dimension.spawnEntity('minecraft:fireball', origin);
     projectile.clearVelocity();
     projectile.applyImpulse(impulse);
   } catch (e) {
@@ -59,14 +80,32 @@ export function cast(player) {
     }
   }
 
-  try {
-    dimension.spawnParticle('minecraft:basic_flame_particle', origin);
-  } catch (e) {
-    // Particle opsional.
+  // Efek tebal: api + asap + trail mengikuti proyektil.
+  particleBurst(dimension, origin, 'minecraft:basic_flame_particle', 28, 1.4);
+  particleBurst(dimension, origin, 'minecraft:smoke', 14, 1.0);
+
+  if (projectile) {
+    let ticks = 0;
+    const trailId = system.runInterval(() => {
+      ticks++;
+      try {
+        if (!projectile.isValid) {
+          system.clearRun(trailId);
+          return;
+        }
+        const p = projectile.location;
+        particleBurst(dimension, p, 'minecraft:basic_flame_particle', 4, 0.3);
+        particleBurst(dimension, p, 'minecraft:smoke', 2, 0.25);
+      } catch (e) {
+        system.clearRun(trailId);
+        return;
+      }
+      if (ticks >= 12) system.clearRun(trailId);
+    }, 2);
   }
 
   try {
-    player.runCommand('playsound mob.blaze.shoot @s');
+    player.runCommand('playsound mob.blaze.shoot @s 2 1');
   } catch (e) {
     // Sound opsional.
   }
