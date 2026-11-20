@@ -16,7 +16,6 @@
         "value": "item.magicrealm:wand.name"
       },
       "minecraft:hand_equipped": true,
-      "minecraft:use_duration": 20,
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
         "max_durability": 1000

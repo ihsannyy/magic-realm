@@ -71,8 +71,9 @@ function ensureFallbackPlatform(dimension) {
       dimension.fillBlocks({ x, y: 65, z }, { x, y: 69, z }, 'minecraft:deepslate_bricks');
       dimension.setBlock({ x, y: 70, z }, 'minecraft:sea_lantern');
     }
-    // Portal balik di tengah arena fallback (supaya player tidak nyangkut).
-    dimension.setBlock({ x: FALLBACK.x, y: 65, z: FALLBACK.z }, PORTAL_BLOCK_ID);
+    // Portal balik di tengah arena fallback. Pakai blok vanilla supaya
+    // selalu terpasang walau definisi blok kustom ditolak game.
+    dimension.setBlock({ x: FALLBACK.x, y: 65, z: FALLBACK.z }, VANILLA_PORTAL_BLOCK_ID);
   } catch (e) {
     // Chunk belum ter-load — teleport tetap dilakukan.
   }

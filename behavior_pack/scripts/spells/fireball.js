@@ -80,9 +80,12 @@ export function cast(player) {
     }
   }
 
-  // Efek tebal: api + asap + trail mengikuti proyektil.
-  particleBurst(dimension, origin, 'minecraft:basic_flame_particle', 28, 1.4);
-  particleBurst(dimension, origin, 'minecraft:smoke', 14, 1.0);
+  // Efek tebal: api + asap + percikan lava + trail mengikuti proyektil.
+  // ID partikel mengikuti daftar vanilla Bedrock Wiki (minecraft:smoke tidak valid).
+  particleBurst(dimension, origin, 'minecraft:basic_flame_particle', 36, 1.6);
+  particleBurst(dimension, origin, 'minecraft:basic_smoke_particle', 20, 1.2);
+  particleBurst(dimension, origin, 'minecraft:lava_particle', 12, 0.9);
+  particleBurst(dimension, origin, 'minecraft:basic_portal_particle', 10, 0.7);
 
   if (projectile) {
     let ticks = 0;
@@ -94,18 +97,18 @@ export function cast(player) {
           return;
         }
         const p = projectile.location;
-        particleBurst(dimension, p, 'minecraft:basic_flame_particle', 4, 0.3);
-        particleBurst(dimension, p, 'minecraft:smoke', 2, 0.25);
+        particleBurst(dimension, p, 'minecraft:basic_flame_particle', 6, 0.35);
+        particleBurst(dimension, p, 'minecraft:basic_smoke_particle', 3, 0.3);
       } catch (e) {
         system.clearRun(trailId);
         return;
       }
-      if (ticks >= 12) system.clearRun(trailId);
+      if (ticks >= 16) system.clearRun(trailId);
     }, 2);
   }
 
   try {
-    player.runCommand('playsound mob.blaze.shoot @s 2 1');
+    player.runCommand('playsound mob.blaze.shoot @s');
   } catch (e) {
     // Sound opsional.
   }

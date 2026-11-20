@@ -49,8 +49,8 @@ setblock 8 67 8 amethyst_block
 # Frame obsidian 4×5
 fill -1 64 5 1 67 5 obsidian
 fill 0 64 5 0 67 5 crying_obsidian
-# Isi portal — blok portal Magic Realm (klik pakai wand untuk teleport)
-fill 0 65 5 0 66 5 magicrealm:aether_portal
+# Isi portal — lodestone (blok vanilla; tap pakai wand untuk teleport)
+fill 0 65 5 0 66 5 minecraft:lodestone
 
 # ─── Lampu gantung langit-langit ───
 setblock -5 74 -5 sea_lantern
