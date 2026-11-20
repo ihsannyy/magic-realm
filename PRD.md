@@ -382,7 +382,7 @@ Tiap spell wajib punya: cost, cooldown, particle, sound, actionbar feedback.
 
 | Minggu | Fase | Deliverable | Status |
 |---|---|---|---|
-| 1 | F1 MVP | Portal, mana, fireball, arena | 🟡 |
+| 1 | F1 MVP | Portal, mana, fireball, arena | ✅ |
 | 2 | F2 Spells | 5 spell, altar, scroll | 🔲 |
 | 3 | F3 Dimension | Aether, biome, mage mob | 🔲 |
 | 4 | F4 Boss | Aether Lord + struktur | 🔲 |
@@ -395,7 +395,7 @@ Tiap spell wajib punya: cost, cooldown, particle, sound, actionbar feedback.
 - [x] F1.3 — Fireball Spell
 - [x] F1.4 — Portal Block
 - [x] F1.5 — Arena Build (mcfunction)
-- [ ] F1.6 — Auto-setup on Join
+- [x] F1.6 — Auto-setup on Join
 
 **Total: 5 minggu.** Kalau ada minggu yang slip, **jangan extend fase** — cut feature. F1 harus selesai minggu 1.
 
