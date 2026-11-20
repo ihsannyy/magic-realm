@@ -87,6 +87,26 @@ function registerEvents() {
     if (event.initialSpawn === false) return;
     setupNewPlayer(event.player);
   });
+
+  // Fallback untuk HP/PE: cast lewat chat karena tap-and-hold tidak selalu
+  // memicu itemUse pada item polos.
+  world.afterEvents.scriptEventReceive.subscribe((event) => {
+    let player = event.sourceEntity;
+    if (!isPlayer(player)) {
+      const players = world.getPlayers();
+      if (players.length === 1) player = players[0];
+    }
+    if (!isPlayer(player)) return;
+
+    const message = String(event.message ?? '').trim().toLowerCase();
+    if (event.id === 'magicrealm:cast') {
+      if (message === 'fireball' || message === '') castFireball(player);
+    } else if (event.id === 'magicrealm:portal') {
+      usePortal(player);
+    } else if (event.id === 'magicrealm:setup') {
+      setupNewPlayer(player);
+    }
+  });
 }
 
 // Top-level script berjalan dalam early-execution mode. Tunda inisialisasi
