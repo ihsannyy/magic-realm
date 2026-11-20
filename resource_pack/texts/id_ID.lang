@@ -3,3 +3,5 @@
 
 item.magicrealm:wand.name=Tongkat Aether
 item.magicrealm:wand.desc=Klik kanan untuk cast spell aktif.
+
+block.magicrealm:aether_portal.name=Portal Aether

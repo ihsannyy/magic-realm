@@ -3,3 +3,5 @@
 
 item.magicrealm:wand.name=Wand of Aether
 item.magicrealm:wand.desc=Right-click to cast the active spell.
+
+block.magicrealm:aether_portal.name=Aether Portal
