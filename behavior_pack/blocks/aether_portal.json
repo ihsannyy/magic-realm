@@ -8,13 +8,8 @@
       }
     },
     "components": {
-      "minecraft:display_name": {
-        "value": "block.magicrealm:aether_portal.name"
-      },
       "minecraft:light_emission": 15,
-      "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": -1
-      },
+      "minecraft:destructible_by_mining": false,
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 3600000
       },
