@@ -392,7 +392,7 @@ Tiap spell wajib punya: cost, cooldown, particle, sound, actionbar feedback.
 
 - [x] F1.1 — Wand Item (BP item + recipe + RP texture + lang minimal)
 - [x] F1.2 — Mana System
-- [ ] F1.3 — Fireball Spell
+- [x] F1.3 — Fireball Spell
 - [ ] F1.4 — Portal Block
 - [ ] F1.5 — Arena Build (mcfunction)
 - [ ] F1.6 — Auto-setup on Join
